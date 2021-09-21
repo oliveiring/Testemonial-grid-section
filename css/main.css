@@ -1,0 +1,114 @@
+/***************************/
+/*Setting-Up*/
+/***************************/
+body {
+  font-size: 13px;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background: #ecf2f8;
+  font-weight: 400;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/***************************/
+/*conteiner*/
+/***************************/
+.conteiner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "one one two  three" "four five five three";
+  grid-gap: 1rem;
+  padding: 10rem;
+  border-radius: 1rem;
+}
+.conteiner .user {
+  display: flex;
+  padding: 1rem 0;
+}
+.conteiner .user img {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  border: 2px solid #cfcfcf;
+  margin-right: 1rem;
+}
+.conteiner blockquote {
+  padding: 1rem 0;
+}
+.conteiner h3 {
+  color: white;
+  font-size: 1.1rem;
+}
+.conteiner .grid-item {
+  padding: 0.3rem 2rem;
+  border-radius: 10px;
+}
+.conteiner .grid-item p,
+.conteiner .grid-item blockquote {
+  color: #cfcfcf;
+}
+.conteiner .grid-item:nth-child(1) {
+  grid-area: one;
+  background: #7541c8;
+  position: relative;
+  z-index: 1;
+}
+.conteiner .grid-item:nth-child(1) .logo {
+  position: absolute;
+  left: 60%;
+  z-index: -1;
+}
+.conteiner .grid-item:nth-child(1) .user img {
+  border: 2px solid #48556a;
+}
+.conteiner .grid-item:nth-child(2) {
+  grid-area: two;
+  background: #48556a;
+}
+.conteiner .grid-item:nth-child(2) .user img {
+  border: 2px solid white;
+}
+.conteiner .grid-item:nth-child(3) {
+  grid-area: three;
+  background: white;
+}
+.conteiner .grid-item:nth-child(3) h3 {
+  color: #000;
+}
+.conteiner .grid-item:nth-child(3) blockquote {
+  color: #555;
+}
+.conteiner .grid-item:nth-child(4) {
+  grid-area: four;
+  background: white;
+}
+.conteiner .grid-item:nth-child(4) h3 {
+  color: #000;
+}
+.conteiner .grid-item:nth-child(4) blockquote {
+  color: #555;
+}
+.conteiner .grid-item:nth-child(5) {
+  grid-area: five;
+  background: #19212e;
+}
+.conteiner .grid-item:nth-child(5) .user img {
+  border: 2px solid #7541c8;
+}
+
+/***************************/
+/*Media Queries*/
+/***************************/
+@media (max-width: 776px) {
+  .conteiner {
+    grid-template-columns: 1fr;
+    grid-template-areas: "one" "two" "four" "five" "three";
+    padding: 1rem;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

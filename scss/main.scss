@@ -1,0 +1,135 @@
+/***************************/
+      /*Setting-Up*/
+/***************************/
+$colors:(
+  Moderate-violet: hsl(263, 55%, 52%),
+  Very-dark-grayish-blue: hsl(217, 19%, 35%),
+  Very-dark-blackish-blue: hsl(219, 29%, 14%),
+  White-color: hsl(0, 0%, 100%),
+
+  Light-gray:hsl(0, 0%, 81%),
+  Light-grayish-blue: hsl(210, 46%, 95%)
+);
+
+@function color($color){
+  @return map-get($colors, $color)
+}
+
+body{
+  font-size:13px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  background: color(Light-grayish-blue);
+  font-weight: 400;
+}
+
+*{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+}
+/***************************/
+      /*conteiner*/
+/***************************/
+.conteiner{
+  display: grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-template-areas:
+    'one one two  three'
+    'four five five three'
+  ;
+  grid-gap: 1rem;
+  padding: 10rem;
+  border-radius: 1rem;
+  .user{
+    display: flex;
+    padding:1rem 0;
+    img{
+      border-radius: 50%;
+      width:35px;
+      height:35px;
+      border:2px solid color(Light-gray);
+      margin-right: 1rem;
+    }
+  }
+  blockquote{
+    padding:1rem 0;
+  }
+  h3{
+    color:color(White-color);
+    font-size:1.1rem;
+  }
+  
+  .grid-item{
+    padding: 0.3rem 2rem;
+    border-radius:10px;
+    p,
+    blockquote{color:color(Light-gray);}
+  }
+  .grid-item:nth-child(1){
+    grid-area: one;
+    background: color(Moderate-violet);
+    position: relative;
+    z-index:1;
+    .logo{
+      position: absolute;
+      left:60%;
+      z-index:-1;
+    }
+    .user{
+      img{border:2px solid color(Very-dark-grayish-blue)}
+    }
+  }
+  
+  .grid-item:nth-child(2){
+    grid-area: two;
+    background: color(Very-dark-grayish-blue);
+
+    .user{
+      img{border:2px solid color(White-color);}
+    }
+    
+  }
+  
+  .grid-item:nth-child(3){
+    grid-area:three;
+    background:color(White-color);
+    h3{color:#000;}
+    blockquote{color:#555;}
+  }
+  
+  .grid-item:nth-child(4){
+    grid-area:four;
+    background: color(White-color);
+    h3{
+      color:#000;
+    }
+    blockquote{color:#555;}
+  }
+  
+  .grid-item:nth-child(5){
+    grid-area:five;
+    background: color(Very-dark-blackish-blue);
+    .user{
+      img{ border:2px solid color(Moderate-violet);} 
+    }
+  }
+
+}
+/***************************/
+      /*Media Queries*/
+/***************************/
+@media(max-width:776px){
+  .conteiner{
+    grid-template-columns:1fr;
+    grid-template-areas:
+      'one'
+      'two'
+      'four'
+      'five'
+      'three'
+    ;
+    padding: 1rem;
+  }
+}
+
+
