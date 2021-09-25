@@ -54,9 +54,10 @@ body{
   blockquote{
     padding:1rem 0;
   }
+  h2,
   h3{
     color:color(White-color);
-    font-size:1.1rem;
+    font-size:1rem;
   }
   
   .grid-item{
@@ -93,6 +94,7 @@ body{
   .grid-item:nth-child(3){
     grid-area:three;
     background:color(White-color);
+    h2,
     h3{color:#000;}
     blockquote{color:#555;}
   }
@@ -100,7 +102,8 @@ body{
   .grid-item:nth-child(4){
     grid-area:four;
     background: color(White-color);
-    h3{
+    h3,
+    h2{
       color:#000;
     }
     blockquote{color:#555;}
